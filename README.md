@@ -24,15 +24,33 @@ This is my PHP and MySQL internship project for ApexPlanet Software Pvt.Ltd
 - Implemented password Hashing
 - Implemented Session Management
 
+## Task-3 Completed
+- Search Functionality
+  - Search posts by title and content
+  - Dynamic search using PHP & MySQL
+  - Displays filtered results
+- Pagination
+  - Limited number of posts per page
+  - Dynamic page navigation
+  - Maintains search results across pages
+- User Interface Improvements
+  - Styled application using CSS
+  - Improved layout and readability
+  - Better user experience
 
 ## Features
-- Simple PHP page
-- Displays heading and message
+- User Registration & Login System
+- Secure Authentication with Sessions
+- Password Hashing for security
+- Full CRUD functionality for posts
+- Search posts by keyword
+- Pagination for better data handling
+- Clean and simple UI design
 
-## How to run
-1. Place project in XAMPP htdocs
-2. Start Apache
-3. Open http://localhost/blog_project
+## How to Run
+- Place project in XAMPP htdocs
+- Start Apache & MySQL
+- Import database in phpMyAdmin
+- Open browser and run:http://localhost/blog_project
 
-## Author
-Archana Mandadi
+
