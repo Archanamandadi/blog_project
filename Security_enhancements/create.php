@@ -1,46 +1,38 @@
 <?php
 include 'db.php';
 session_start();
-<div style="background:#333; padding:10px;">
-    <a href="index.php" style="color:white; margin-right:15px;">Home</a>
-    <a href="create.php" style="color:white; margin-right:15px;">Add Post</a>
-    <a href="logout.php" style="color:white;">Logout</a>
-</div>
 
 //  Authentication
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
-//  Role Check (STEP 3)
+//  Role Check
 if ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'editor') {
     echo "Access Denied!";
     exit();
 }
 
-// Form handling
+//  Form handling
 if (isset($_POST['submit'])) {
 
-    //  Get input
+    // Get input
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
 
-    //  Server-side validation 
+    // Server-side validation
     if (empty($title) || empty($content)) {
         echo "All fields are required!";
     } else {
 
-        //  Prepared Statement (STEP 1)
+        // Prepared Statement
         $stmt = $conn->prepare("INSERT INTO posts (title, content) VALUES (?, ?)");
         $stmt->bind_param("ss", $title, $content);
 
         if ($stmt->execute()) {
-
-            // Better UX
             header("Location: index.php");
             exit();
-
         } else {
             echo "Error: " . $stmt->error;
         }
@@ -55,7 +47,6 @@ if (isset($_POST['submit'])) {
 <head>
     <title>Add Post</title>
 
-    <!--  Client-side validation  -->
     <script>
         function validateForm() {
             let title = document.forms["postForm"]["title"].value.trim();
@@ -70,6 +61,13 @@ if (isset($_POST['submit'])) {
     </script>
 </head>
 <body>
+
+<!--  Navigation Bar -->
+<div style="background:#333; padding:10px;">
+    <a href="index.php" style="color:white; margin-right:15px;">Home</a>
+    <a href="create.php" style="color:white; margin-right:15px;">Add Post</a>
+    <a href="logout.php" style="color:white;">Logout</a>
+</div>
 
 <h2>Add New Post</h2>
 
