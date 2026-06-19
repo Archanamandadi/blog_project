@@ -1,6 +1,11 @@
 <?php
 include 'db.php';
 session_start();
+<div style="background:#333; padding:10px;">
+    <a href="index.php" style="color:white; margin-right:15px;">Home</a>
+    <a href="create.php" style="color:white; margin-right:15px;">Add Post</a>
+    <a href="logout.php" style="color:white;">Logout</a>
+</div>
 
 //  Authentication
 if (!isset($_SESSION['username'])) {
