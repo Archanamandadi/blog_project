@@ -1,5 +1,7 @@
 PHP & MySQL Blog Application
+
 Internship Project – ApexPlanet Software Pvt. Ltd.
+
 ## Project Overview
 
 This project is a complete Blog Web Application developed using PHP and MySQL as part of my internship at ApexPlanet Software Pvt. Ltd.
