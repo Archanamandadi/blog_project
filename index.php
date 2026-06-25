@@ -93,7 +93,7 @@ $result = $stmt->get_result();
                 <!--  EDIT -->
                 <?php if ($role === 'admin' || $role === 'editor') { ?>
                     <div class="actions">
-                        <a href="../Security_enhancements/update.php?id=<?php echo $row['id']; ?>">
+                        <a href="../Security_enhancements/edit.php?id=<?php echo $row['id']; ?>">
                             Edit
                         </a>
 
